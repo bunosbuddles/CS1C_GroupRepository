@@ -25,7 +25,8 @@ MainWindow::~MainWindow()
 
 
 
-void MainWindow::on_pushButton_3_clicked()
+
+void MainWindow::on_contactBtn_clicked()
 {
     ContactUs contactPage;
     contactPage.setModal(true);
