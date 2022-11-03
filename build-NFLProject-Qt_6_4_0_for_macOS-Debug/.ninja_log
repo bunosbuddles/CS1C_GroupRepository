@@ -1,0 +1,21 @@
+# ninja log v5
+474	523	1667435164538527917	NFLProject.app/Contents/MacOS/NFLProject	e4b636209c725879
+38	474	1667435164487242749	CMakeFiles/NFLProject.dir/mainwindow.cpp.o	467e951560e833d8
+168	630	1667430165630178869	CMakeFiles/NFLProject.dir/main.cpp.o	c132cb63da1467e0
+168	627	1667430165626909004	CMakeFiles/NFLProject.dir/NFLProject_autogen/mocs_compilation.cpp.o	9e298007c1250fa1
+4	37	1667435164053324665	/Users/daniel/Documents/US/Community College/Classes/CS 1C - Introduction to Programming III/Projects/CS1C_GroupRepository/build-NFLProject-Qt_6_4_0_for_macOS-Debug/NFLProject_autogen/mocs_compilation.cpp	653a89cacd2ba04e
+4	37	1667435164053324665	/Users/daniel/Documents/US/Community College/Classes/CS 1C - Introduction to Programming III/Projects/CS1C_GroupRepository/build-NFLProject-Qt_6_4_0_for_macOS-Debug/NFLProject_autogen/timestamp	653a89cacd2ba04e
+4	37	1667435164053324665	NFLProject_autogen/mocs_compilation.cpp	653a89cacd2ba04e
+4	37	1667435164053324665	NFLProject_autogen/timestamp	653a89cacd2ba04e
+3	34	1667435205325181419	NFLProject_autogen/timestamp	653a89cacd2ba04e
+3	34	1667435205325181419	NFLProject_autogen/mocs_compilation.cpp	653a89cacd2ba04e
+3	34	1667435205325181419	/Users/daniel/Documents/US/Community College/Classes/CS 1C - Introduction to Programming III/Projects/CS1C_GroupRepository/build-NFLProject-Qt_6_4_0_for_macOS-Debug/NFLProject_autogen/timestamp	653a89cacd2ba04e
+3	34	1667435205325181419	/Users/daniel/Documents/US/Community College/Classes/CS 1C - Introduction to Programming III/Projects/CS1C_GroupRepository/build-NFLProject-Qt_6_4_0_for_macOS-Debug/NFLProject_autogen/mocs_compilation.cpp	653a89cacd2ba04e
+35	646	1667435205934199105	CMakeFiles/NFLProject.dir/mainwindow.cpp.o	467e951560e833d8
+647	712	1667435206002148173	NFLProject.app/Contents/MacOS/NFLProject	e4b636209c725879
+3	34	1667435254106317507	NFLProject_autogen/timestamp	653a89cacd2ba04e
+3	34	1667435254106317507	NFLProject_autogen/mocs_compilation.cpp	653a89cacd2ba04e
+3	34	1667435254106317507	/Users/daniel/Documents/US/Community College/Classes/CS 1C - Introduction to Programming III/Projects/CS1C_GroupRepository/build-NFLProject-Qt_6_4_0_for_macOS-Debug/NFLProject_autogen/timestamp	653a89cacd2ba04e
+3	34	1667435254106317507	/Users/daniel/Documents/US/Community College/Classes/CS 1C - Introduction to Programming III/Projects/CS1C_GroupRepository/build-NFLProject-Qt_6_4_0_for_macOS-Debug/NFLProject_autogen/mocs_compilation.cpp	653a89cacd2ba04e
+35	478	1667435254546783509	CMakeFiles/NFLProject.dir/mainwindow.cpp.o	467e951560e833d8
+478	529	1667435254600096482	NFLProject.app/Contents/MacOS/NFLProject	e4b636209c725879
