@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-875c8319eda95723fbee.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "NFLProject",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "NFLProject::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-NFLProject-Debug-01baf5e6da8c677fdbf2.json",
+					"name" : "NFLProject",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "NFLProject_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-NFLProject_autogen-Debug-4ba9e042aca6b3241bae.json",
+					"name" : "NFLProject_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "NFLProject_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-NFLProject_autogen_timestamp_deps-Debug-c8e69edbc0b98aca8331.json",
+					"name" : "NFLProject_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/daniel/Documents/US/Community College/Classes/CS 1C - Introduction to Programming III/Projects/CS1C_GroupRepository/build-NFLProject-Qt_6_4_0_for_macOS-Debug",
+		"source" : "/Users/daniel/Documents/US/Community College/Classes/CS 1C - Introduction to Programming III/Projects/CS1C_GroupRepository/NFLProject"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

@@ -1,0 +1,9 @@
+/Users/daniel/Documents/US/Community College/Classes/CS 1C - Introduction to Programming III/Projects/CS1C_GroupRepository/build-NFLProject-Qt_6_4_0_for_macOS-Debug/CMakeFiles/NFLProject.dir
+/Users/daniel/Documents/US/Community College/Classes/CS 1C - Introduction to Programming III/Projects/CS1C_GroupRepository/build-NFLProject-Qt_6_4_0_for_macOS-Debug/CMakeFiles/edit_cache.dir
+/Users/daniel/Documents/US/Community College/Classes/CS 1C - Introduction to Programming III/Projects/CS1C_GroupRepository/build-NFLProject-Qt_6_4_0_for_macOS-Debug/CMakeFiles/rebuild_cache.dir
+/Users/daniel/Documents/US/Community College/Classes/CS 1C - Introduction to Programming III/Projects/CS1C_GroupRepository/build-NFLProject-Qt_6_4_0_for_macOS-Debug/CMakeFiles/list_install_components.dir
+/Users/daniel/Documents/US/Community College/Classes/CS 1C - Introduction to Programming III/Projects/CS1C_GroupRepository/build-NFLProject-Qt_6_4_0_for_macOS-Debug/CMakeFiles/install.dir
+/Users/daniel/Documents/US/Community College/Classes/CS 1C - Introduction to Programming III/Projects/CS1C_GroupRepository/build-NFLProject-Qt_6_4_0_for_macOS-Debug/CMakeFiles/install/local.dir
+/Users/daniel/Documents/US/Community College/Classes/CS 1C - Introduction to Programming III/Projects/CS1C_GroupRepository/build-NFLProject-Qt_6_4_0_for_macOS-Debug/CMakeFiles/install/strip.dir
+/Users/daniel/Documents/US/Community College/Classes/CS 1C - Introduction to Programming III/Projects/CS1C_GroupRepository/build-NFLProject-Qt_6_4_0_for_macOS-Debug/CMakeFiles/NFLProject_autogen_timestamp_deps.dir
+/Users/daniel/Documents/US/Community College/Classes/CS 1C - Introduction to Programming III/Projects/CS1C_GroupRepository/build-NFLProject-Qt_6_4_0_for_macOS-Debug/CMakeFiles/NFLProject_autogen.dir

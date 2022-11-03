@@ -11,6 +11,7 @@ DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs depr
 SOURCES += \
     dynamicarray.cpp \
     filehandler.cpp \
+    contactus.cpp \
     main.cpp \
     mainwindow.cpp \
     team.cpp
@@ -20,8 +21,11 @@ HEADERS += \
     filehandler.h \
     mainwindow.h \
     team.h
+    contactus.h \
+    mainwindow.h
 
 FORMS += \
+    contactus.ui \
     mainwindow.ui
 
 # Default rules for deployment.

@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "team.h"
 #include "filehandler.h"
+#include "contactus.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -19,5 +20,15 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+
+
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    ContactUs contactPage;
+    contactPage.setModal(true);
+    contactPage.exec();
 }
 
