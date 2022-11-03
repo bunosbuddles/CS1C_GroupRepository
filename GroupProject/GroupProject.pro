@@ -20,7 +20,7 @@ HEADERS += \
     dynamicarray.h \
     filehandler.h \
     mainwindow.h \
-    team.h
+    team.h \
     contactus.h \
     mainwindow.h
 
