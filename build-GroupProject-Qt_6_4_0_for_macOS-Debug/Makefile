@@ -14,7 +14,7 @@ EQ            = =
 
 CC            = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
 CXX           = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
-DEFINES       = -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
+DEFINES       = -DQT_DISABLE_DEPRECATED_BEFORE=0x060000 -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -mmacosx-version-min=10.14 -Wall -Wextra $(DEFINES)
 CXXFLAGS      = -pipe -stdlib=libc++ -g -std=gnu++1z $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -mmacosx-version-min=10.14 -Wall -Wextra $(DEFINES)
 INCPATH       = -I../GroupProject -I. -I../../Qt/6.4.0/macos/lib/QtWidgets.framework/Headers -I../../Qt/6.4.0/macos/lib/QtGui.framework/Headers -I../../Qt/6.4.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/AGL.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/AGL.framework/Headers -I../../Qt/6.4.0/macos/mkspecs/macx-clang -F/Users/ezekielkim/Qt/6.4.0/macos/lib
@@ -52,12 +52,21 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../GroupProject/main.cpp \
-		../GroupProject/mainwindow.cpp moc_mainwindow.cpp
-OBJECTS       = main.o \
+SOURCES       = ../GroupProject/dynamicarray.cpp \
+		../GroupProject/filehandler.cpp \
+		../GroupProject/main.cpp \
+		../GroupProject/mainwindow.cpp \
+		../GroupProject/team.cpp qrc_MyResources.cpp \
+		moc_mainwindow.cpp
+OBJECTS       = dynamicarray.o \
+		filehandler.o \
+		main.o \
 		mainwindow.o \
+		team.o \
+		qrc_MyResources.o \
 		moc_mainwindow.o
-DIST          = ../../Qt/6.4.0/macos/mkspecs/features/spec_pre.prf \
+DIST          = ../GroupProject/nfl_information.csv \
+		../../Qt/6.4.0/macos/mkspecs/features/spec_pre.prf \
 		../../Qt/6.4.0/macos/mkspecs/features/device_config.prf \
 		../../Qt/6.4.0/macos/mkspecs/common/unix.conf \
 		../../Qt/6.4.0/macos/mkspecs/common/mac.conf \
@@ -307,6 +316,7 @@ DIST          = ../../Qt/6.4.0/macos/mkspecs/features/spec_pre.prf \
 		../../Qt/6.4.0/macos/mkspecs/features/qt_config.prf \
 		../../Qt/6.4.0/macos/mkspecs/macx-clang/qmake.conf \
 		../../Qt/6.4.0/macos/mkspecs/features/spec_post.prf \
+		../GroupProject/.qmake.stash \
 		../../Qt/6.4.0/macos/mkspecs/features/exclusive_builds.prf \
 		../../Qt/6.4.0/macos/mkspecs/features/mac/sdk.prf \
 		../../Qt/6.4.0/macos/mkspecs/features/toolchain.prf \
@@ -335,8 +345,14 @@ DIST          = ../../Qt/6.4.0/macos/mkspecs/features/spec_pre.prf \
 		../../Qt/6.4.0/macos/mkspecs/features/exceptions.prf \
 		../../Qt/6.4.0/macos/mkspecs/features/yacc.prf \
 		../../Qt/6.4.0/macos/mkspecs/features/lex.prf \
-		../GroupProject/GroupProject.pro ../GroupProject/mainwindow.h ../GroupProject/main.cpp \
-		../GroupProject/mainwindow.cpp
+		../GroupProject/GroupProject.pro ../GroupProject/dynamicarray.h \
+		../GroupProject/filehandler.h \
+		../GroupProject/mainwindow.h \
+		../GroupProject/team.h ../GroupProject/dynamicarray.cpp \
+		../GroupProject/filehandler.cpp \
+		../GroupProject/main.cpp \
+		../GroupProject/mainwindow.cpp \
+		../GroupProject/team.cpp
 QMAKE_TARGET  = GroupProject
 DESTDIR       = 
 TARGET        = GroupProject.app/Contents/MacOS/GroupProject
@@ -345,7 +361,7 @@ TARGET        = GroupProject.app/Contents/MacOS/GroupProject
 EXPORT_QMAKE_MAC_SDK = macosx
 EXPORT_QMAKE_MAC_SDK_VERSION = 12.3
 EXPORT_QMAKE_XCODE_DEVELOPER_PATH = /Applications/Xcode.app/Contents/Developer
-EXPORT__QMAKE_STASH_ = 
+EXPORT__QMAKE_STASH_ = /Users/ezekielkim/GroupProject/build-GroupProject-Qt_6_4_0_for_macOS-Debug/.qmake.stash
 EXPORT_VALID_ARCHS = x86_64 arm64
 EXPORT_DEFAULT_ARCHS = arm64
 EXPORT_ARCHS = $(filter $(EXPORT_VALID_ARCHS), $(if $(ARCHS), $(ARCHS), $(if $(EXPORT_DEFAULT_ARCHS), $(EXPORT_DEFAULT_ARCHS), $(EXPORT_VALID_ARCHS))))
@@ -611,6 +627,7 @@ Makefile: ../GroupProject/GroupProject.pro ../../Qt/6.4.0/macos/mkspecs/macx-cla
 		../../Qt/6.4.0/macos/mkspecs/features/qt_config.prf \
 		../../Qt/6.4.0/macos/mkspecs/macx-clang/qmake.conf \
 		../../Qt/6.4.0/macos/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../Qt/6.4.0/macos/mkspecs/features/exclusive_builds.prf \
 		../../Qt/6.4.0/macos/mkspecs/features/mac/sdk.prf \
 		../../Qt/6.4.0/macos/mkspecs/features/toolchain.prf \
@@ -640,6 +657,7 @@ Makefile: ../GroupProject/GroupProject.pro ../../Qt/6.4.0/macos/mkspecs/macx-cla
 		../../Qt/6.4.0/macos/mkspecs/features/yacc.prf \
 		../../Qt/6.4.0/macos/mkspecs/features/lex.prf \
 		../GroupProject/GroupProject.pro \
+		../GroupProject/MyResources.qrc \
 		../../Qt/6.4.0/macos/lib/QtWidgets.framework/Resources/QtWidgets.prl \
 		../../Qt/6.4.0/macos/lib/QtGui.framework/Resources/QtGui.prl \
 		../../Qt/6.4.0/macos/lib/QtCore.framework/Resources/QtCore.prl
@@ -894,6 +912,7 @@ Makefile: ../GroupProject/GroupProject.pro ../../Qt/6.4.0/macos/mkspecs/macx-cla
 ../../Qt/6.4.0/macos/mkspecs/features/qt_config.prf:
 ../../Qt/6.4.0/macos/mkspecs/macx-clang/qmake.conf:
 ../../Qt/6.4.0/macos/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../Qt/6.4.0/macos/mkspecs/features/exclusive_builds.prf:
 ../../Qt/6.4.0/macos/mkspecs/features/mac/sdk.prf:
 ../../Qt/6.4.0/macos/mkspecs/features/toolchain.prf:
@@ -923,6 +942,7 @@ Makefile: ../GroupProject/GroupProject.pro ../../Qt/6.4.0/macos/mkspecs/macx-cla
 ../../Qt/6.4.0/macos/mkspecs/features/yacc.prf:
 ../../Qt/6.4.0/macos/mkspecs/features/lex.prf:
 ../GroupProject/GroupProject.pro:
+../GroupProject/MyResources.qrc:
 ../../Qt/6.4.0/macos/lib/QtWidgets.framework/Resources/QtWidgets.prl:
 ../../Qt/6.4.0/macos/lib/QtGui.framework/Resources/QtGui.prl:
 ../../Qt/6.4.0/macos/lib/QtCore.framework/Resources/QtCore.prl:
@@ -955,8 +975,9 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../GroupProject/mainwindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../GroupProject/main.cpp ../GroupProject/mainwindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../GroupProject/MyResources.qrc $(DISTDIR)/
+	$(COPY_FILE) --parents ../GroupProject/dynamicarray.h ../GroupProject/filehandler.h ../GroupProject/mainwindow.h ../GroupProject/team.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../GroupProject/dynamicarray.cpp ../GroupProject/filehandler.cpp ../GroupProject/main.cpp ../GroupProject/mainwindow.cpp ../GroupProject/team.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../GroupProject/mainwindow.ui $(DISTDIR)/
 
 
@@ -967,6 +988,7 @@ clean: compiler_clean
 
 distclean: clean 
 	-$(DEL_FILE) -r GroupProject.app
+	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
 
 
@@ -983,8 +1005,14 @@ check: first
 
 benchmark: first
 
-compiler_rcc_make_all:
+compiler_rcc_make_all: qrc_MyResources.cpp
 compiler_rcc_clean:
+	-$(DEL_FILE) qrc_MyResources.cpp
+qrc_MyResources.cpp: ../GroupProject/MyResources.qrc \
+		../../Qt/6.4.0/macos/libexec/rcc \
+		../GroupProject/nfl_information.csv
+	/Users/ezekielkim/Qt/6.4.0/macos/libexec/rcc -name MyResources --no-zstd ../GroupProject/MyResources.qrc -o qrc_MyResources.cpp
+
 compiler_moc_header_make_all: moc_mainwindow.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) moc_mainwindow.cpp
@@ -1013,9 +1041,21 @@ compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: compiler_moc_header_clean compiler_uic_clean 
+compiler_clean: compiler_rcc_clean compiler_moc_header_clean compiler_uic_clean 
 
 ####### Compile
+
+dynamicarray.o: ../GroupProject/dynamicarray.cpp ../GroupProject/dynamicarray.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o dynamicarray.o ../GroupProject/dynamicarray.cpp
+
+filehandler.o: ../GroupProject/filehandler.cpp ../GroupProject/filehandler.h \
+		../GroupProject/team.h \
+		../GroupProject/dynamicarray.h \
+		../../Qt/6.4.0/macos/lib/QtWidgets.framework/Headers/QApplication \
+		../../Qt/6.4.0/macos/lib/QtWidgets.framework/Headers/qapplication.h \
+		../../Qt/6.4.0/macos/lib/QtCore.framework/Headers/QFile \
+		../../Qt/6.4.0/macos/lib/QtCore.framework/Headers/qfile.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o filehandler.o ../GroupProject/filehandler.cpp
 
 main.o: ../GroupProject/main.cpp ../GroupProject/mainwindow.h \
 		../../Qt/6.4.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
@@ -1027,8 +1067,17 @@ main.o: ../GroupProject/main.cpp ../GroupProject/mainwindow.h \
 mainwindow.o: ../GroupProject/mainwindow.cpp ../GroupProject/mainwindow.h \
 		../../Qt/6.4.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../Qt/6.4.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		ui_mainwindow.h
+		ui_mainwindow.h \
+		../GroupProject/team.h \
+		../GroupProject/filehandler.h \
+		../GroupProject/dynamicarray.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../GroupProject/mainwindow.cpp
+
+team.o: ../GroupProject/team.cpp ../GroupProject/team.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o team.o ../GroupProject/team.cpp
+
+qrc_MyResources.o: qrc_MyResources.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_MyResources.o qrc_MyResources.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
