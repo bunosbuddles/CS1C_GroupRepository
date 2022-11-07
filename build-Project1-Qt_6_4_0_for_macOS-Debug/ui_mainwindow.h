@@ -13,7 +13,6 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QHBoxLayout>
-#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -32,7 +31,7 @@ public:
     QVBoxLayout *verticalLayout;
     QFrame *frame;
     QHBoxLayout *horizontalLayout;
-    QLabel *headerLabel;
+    QPushButton *pushButton;
     QSpacerItem *horizontalSpacer;
     QPushButton *maintenanceBtn;
     QPushButton *helpBtn;
@@ -47,7 +46,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(725, 468);
+        MainWindow->resize(725, 657);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         centralwidget->setStyleSheet(QString::fromUtf8("QWidget {\n"
@@ -90,10 +89,16 @@ public:
         frame->setFrameShadow(QFrame::Raised);
         horizontalLayout = new QHBoxLayout(frame);
         horizontalLayout->setObjectName("horizontalLayout");
-        headerLabel = new QLabel(frame);
-        headerLabel->setObjectName("headerLabel");
+        pushButton = new QPushButton(frame);
+        pushButton->setObjectName("pushButton");
+        QFont font;
+        font.setPointSize(18);
+        font.setBold(true);
+        pushButton->setFont(font);
+        pushButton->setAutoFillBackground(false);
+        pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(217, 217, 217);"));
 
-        horizontalLayout->addWidget(headerLabel);
+        horizontalLayout->addWidget(pushButton);
 
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -133,7 +138,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 725, 36));
+        menubar->setGeometry(QRect(0, 0, 725, 24));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -141,7 +146,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -150,7 +155,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        headerLabel->setText(QCoreApplication::translate("MainWindow", "nfl almnac", nullptr));
+        pushButton->setText(QCoreApplication::translate("MainWindow", "nfl almnac", nullptr));
         maintenanceBtn->setText(QCoreApplication::translate("MainWindow", "maintenance", nullptr));
         helpBtn->setText(QCoreApplication::translate("MainWindow", "help", nullptr));
         contactUsBtn->setText(QCoreApplication::translate("MainWindow", "contact us", nullptr));
