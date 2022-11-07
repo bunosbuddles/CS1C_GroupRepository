@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>725</width>
-    <height>468</height>
+    <height>657</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -66,7 +66,19 @@ QLabel {
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QLabel" name="headerLabel">
+        <widget class="QPushButton" name="pushButton">
+         <property name="font">
+          <font>
+           <pointsize>18</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(217, 217, 217);</string>
+         </property>
          <property name="text">
           <string>nfl almnac</string>
          </property>
@@ -124,7 +136,7 @@ QLabel {
        </size>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="page"/>
       <widget class="QWidget" name="page_2"/>
@@ -138,7 +150,7 @@ QLabel {
      <x>0</x>
      <y>0</y>
      <width>725</width>
-     <height>36</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>
