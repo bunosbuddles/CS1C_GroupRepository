@@ -13,6 +13,7 @@ SOURCES += \
     dynamicarray.cpp \
     filehandler.cpp \
     help.cpp \
+    list.cpp \
     main.cpp \
     maintenance.cpp \
     mainwindow.cpp \
@@ -23,6 +24,7 @@ HEADERS += \
     dynamicarray.h \
     filehandler.h \
     help.h \
+    list.h \
     maintenance.h \
     mainwindow.h \
     team.h
@@ -30,6 +32,7 @@ HEADERS += \
 FORMS += \
     contactus.ui \
     help.ui \
+    list.ui \
     maintenance.ui \
     mainwindow.ui
 
@@ -37,3 +40,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    resourceFiles.qrc

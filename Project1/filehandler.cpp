@@ -2,6 +2,7 @@
 #include <QApplication>
 #include <QFile>
 #include <sstream>
+#include <QDebug>
 
 
 int readFile(Team teams[])
@@ -137,6 +138,7 @@ int readFile(Team teams[])
                     dt = NAME;
                     firstcapacity += secondcapacity;
                     teams[j] = Team(name, stadium, stoi(firstcapacity), city, state, conference, division, surfaceType, roofType, stoi(dateOpened));
+                    qDebug() << QString::fromStdString(teams[j].name);
                     j++;
                     break;
                 }
@@ -152,5 +154,4 @@ int readFile(Team teams[])
 
         return 0;
     }
-
 }
