@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FindHelp</class>
+ <widget class="QWidget" name="FindHelp">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QLabel {
+	width: 356px;
+	height: 24px;
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 24px;
+
+	color: #000000;
+}
+
+QTextBrowser {
+	background-color: rgba(0,0,0,0);
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>instructions for usage</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTextBrowser" name="textBrowser">
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Open Sans','Arial','sans-serif'; font-size:14pt; color:#000000; background-color:#ffffff;&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus ipsum sed nisi mollis, id consectetur tortor maximus. Aliquam semper, urna eget malesuada feugiat, tortor lorem tincidunt libero, vitae facilisis ex arcu et turpis. Pellentesque vel facilisis tortor. Proin venenatis ornare sem a fermentum. Donec quam velit, vestibulum ut urna eget, imperdiet gravida eros. Duis nunc nibh, sollicitudin eget porttitor at, interdum ut lorem. Nulla efficitur enim lacus, ac vestibulum velit fermentum a. Aenean consectetur neque metus, id tempus odio faucibus at. Aliquam fermentum porttitor cursus. Mauris dignissim odio sed blandit dignissim.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:15px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Open Sans','Arial','sans-serif'; font-size:14pt; color:#000000; background-color:#ffffff;&quot;&gt;Suspendisse id metus dapibus, maximus ipsum sed, tincidunt mi. Aliquam elementum purus eu arcu consequat mollis ut id lacus. Morbi est turpis, lobortis id orci a, tempus elementum urna. Nullam nulla dui, vulputate consequat quam id, feugiat venenatis ipsum. Curabitur ornare commodo efficitur. Sed ultrices ultricies mauris, at faucibus felis pellentesque eu. Aliquam eu quam consectetur, pellentesque tellus vel, varius dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
