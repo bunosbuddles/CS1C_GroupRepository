@@ -55,18 +55,22 @@ OBJECTS_DIR   = ./
 SOURCES       = ../GroupProject/dynamicarray.cpp \
 		../GroupProject/filehandler.cpp \
 		../GroupProject/contactus.cpp \
+		../GroupProject/findhelp.cpp \
 		../GroupProject/main.cpp \
 		../GroupProject/mainwindow.cpp \
 		../GroupProject/team.cpp qrc_MyResources.cpp \
+		moc_findhelp.cpp \
 		moc_mainwindow.cpp \
 		moc_contactus.cpp
 OBJECTS       = dynamicarray.o \
 		filehandler.o \
 		contactus.o \
+		findhelp.o \
 		main.o \
 		mainwindow.o \
 		team.o \
 		qrc_MyResources.o \
+		moc_findhelp.o \
 		moc_mainwindow.o \
 		moc_contactus.o
 DIST          = ../GroupProject/nfl_information.csv \
@@ -218,12 +222,14 @@ DIST          = ../GroupProject/nfl_information.csv \
 		/Users/daniel/Qt/6.4.0/macos/mkspecs/features/lex.prf \
 		../GroupProject/GroupProject.pro ../GroupProject/dynamicarray.h \
 		../GroupProject/filehandler.h \
+		../GroupProject/findhelp.h \
 		../GroupProject/mainwindow.h \
 		../GroupProject/team.h \
 		../GroupProject/contactus.h \
 		../GroupProject/mainwindow.h ../GroupProject/dynamicarray.cpp \
 		../GroupProject/filehandler.cpp \
 		../GroupProject/contactus.cpp \
+		../GroupProject/findhelp.cpp \
 		../GroupProject/main.cpp \
 		../GroupProject/mainwindow.cpp \
 		../GroupProject/team.cpp
@@ -247,7 +253,7 @@ include /Users/daniel/Qt/6.4.0/macos/mkspecs/features/mac/sdk.mk
 first: all
 ####### Build rules
 
-GroupProject.app/Contents/MacOS/GroupProject: ui_contactus.h ui_mainwindow.h $(OBJECTS)  
+GroupProject.app/Contents/MacOS/GroupProject: ui_contactus.h ui_findhelp.h ui_mainwindow.h $(OBJECTS)  
 	@test -d GroupProject.app/Contents/MacOS/ || mkdir -p GroupProject.app/Contents/MacOS/
 	$(LINK) $(LFLAGS) -o $(TARGET)  $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -584,9 +590,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../GroupProject/MyResources.qrc $(DISTDIR)/
-	$(COPY_FILE) --parents ../GroupProject/dynamicarray.h ../GroupProject/filehandler.h ../GroupProject/mainwindow.h ../GroupProject/team.h ../GroupProject/contactus.h ../GroupProject/mainwindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../GroupProject/dynamicarray.cpp ../GroupProject/filehandler.cpp ../GroupProject/contactus.cpp ../GroupProject/main.cpp ../GroupProject/mainwindow.cpp ../GroupProject/team.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../GroupProject/contactus.ui ../GroupProject/mainwindow.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../GroupProject/dynamicarray.h ../GroupProject/filehandler.h ../GroupProject/findhelp.h ../GroupProject/mainwindow.h ../GroupProject/team.h ../GroupProject/contactus.h ../GroupProject/mainwindow.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../GroupProject/dynamicarray.cpp ../GroupProject/filehandler.cpp ../GroupProject/contactus.cpp ../GroupProject/findhelp.cpp ../GroupProject/main.cpp ../GroupProject/mainwindow.cpp ../GroupProject/team.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../GroupProject/contactus.ui ../GroupProject/findhelp.ui ../GroupProject/mainwindow.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -621,9 +627,15 @@ qrc_MyResources.cpp: ../GroupProject/MyResources.qrc \
 		../GroupProject/nfl_information.csv
 	/Users/daniel/Qt/6.4.0/macos/libexec/rcc -name MyResources --no-zstd ../GroupProject/MyResources.qrc -o qrc_MyResources.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp moc_contactus.cpp moc_mainwindow.cpp
+compiler_moc_header_make_all: moc_findhelp.cpp moc_mainwindow.cpp moc_contactus.cpp moc_mainwindow.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp moc_contactus.cpp moc_mainwindow.cpp
+	-$(DEL_FILE) moc_findhelp.cpp moc_mainwindow.cpp moc_contactus.cpp moc_mainwindow.cpp
+moc_findhelp.cpp: ../GroupProject/findhelp.h \
+		/Users/daniel/Qt/6.4.0/macos/lib/QtWidgets.framework/Headers/QWidget \
+		/Users/daniel/Qt/6.4.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
+		/Users/daniel/Qt/6.4.0/macos/libexec/moc
+	/Users/daniel/Qt/6.4.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=13 -D__clang_minor__=1 -D__clang_patchlevel__=6 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/daniel/Qt/6.4.0/macos/mkspecs/macx-clang -I'/Users/daniel/Documents/US/Community College/Classes/CS 1C - Introduction to Programming III/Projects/CS1C_GroupRepository/GroupProject' -I/Users/daniel/Qt/6.4.0/macos/lib/QtWidgets.framework/Headers -I/Users/daniel/Qt/6.4.0/macos/lib/QtGui.framework/Headers -I/Users/daniel/Qt/6.4.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.1.6/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/daniel/Qt/6.4.0/macos/lib ../GroupProject/findhelp.h -o moc_findhelp.cpp
+
 moc_mainwindow.cpp: ../GroupProject/mainwindow.h \
 		/Users/daniel/Qt/6.4.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/daniel/Qt/6.4.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
@@ -646,12 +658,16 @@ compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_contactus.h ui_mainwindow.h
+compiler_uic_make_all: ui_contactus.h ui_findhelp.h ui_mainwindow.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_contactus.h ui_mainwindow.h
+	-$(DEL_FILE) ui_contactus.h ui_findhelp.h ui_mainwindow.h
 ui_contactus.h: ../GroupProject/contactus.ui \
 		/Users/daniel/Qt/6.4.0/macos/libexec/uic
 	/Users/daniel/Qt/6.4.0/macos/libexec/uic ../GroupProject/contactus.ui -o ui_contactus.h
+
+ui_findhelp.h: ../GroupProject/findhelp.ui \
+		/Users/daniel/Qt/6.4.0/macos/libexec/uic
+	/Users/daniel/Qt/6.4.0/macos/libexec/uic ../GroupProject/findhelp.ui -o ui_findhelp.h
 
 ui_mainwindow.h: ../GroupProject/mainwindow.ui \
 		/Users/daniel/Qt/6.4.0/macos/libexec/uic
@@ -687,6 +703,12 @@ contactus.o: ../GroupProject/contactus.cpp ../GroupProject/contactus.h \
 		ui_contactus.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o contactus.o ../GroupProject/contactus.cpp
 
+findhelp.o: ../GroupProject/findhelp.cpp ../GroupProject/findhelp.h \
+		/Users/daniel/Qt/6.4.0/macos/lib/QtWidgets.framework/Headers/QWidget \
+		/Users/daniel/Qt/6.4.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
+		ui_findhelp.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o findhelp.o ../GroupProject/findhelp.cpp
+
 main.o: ../GroupProject/main.cpp ../GroupProject/mainwindow.h \
 		/Users/daniel/Qt/6.4.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/daniel/Qt/6.4.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
@@ -711,6 +733,9 @@ team.o: ../GroupProject/team.cpp ../GroupProject/team.h
 
 qrc_MyResources.o: qrc_MyResources.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_MyResources.o qrc_MyResources.cpp
+
+moc_findhelp.o: moc_findhelp.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_findhelp.o moc_findhelp.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

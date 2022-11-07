@@ -12,6 +12,7 @@ SOURCES += \
     dynamicarray.cpp \
     filehandler.cpp \
     contactus.cpp \
+    findhelp.cpp \
     main.cpp \
     mainwindow.cpp \
     team.cpp
@@ -19,6 +20,7 @@ SOURCES += \
 HEADERS += \
     dynamicarray.h \
     filehandler.h \
+    findhelp.h \
     mainwindow.h \
     team.h \
     contactus.h \
@@ -26,6 +28,7 @@ HEADERS += \
 
 FORMS += \
     contactus.ui \
+    findhelp.ui \
     mainwindow.ui
 
 # Default rules for deployment.
